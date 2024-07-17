@@ -8,22 +8,23 @@ def dict_items_to_list(char_dict):
 
 def file_report(char_count):
     char_dict_keys, char_dict_values = dict_items_to_list(char_count)
-    print(char_dict_keys)
-    print(char_dict_values)
-
     alpha_count_dict = {}
-
+    '''
     for i in range(len(char_dict_keys)):
         if char_dict_keys[i].isalpha():
             alpha_count_dict[char_dict_keys[i]] = char_dict_values[i]
+    '''
+    for i, element in enumerate(char_dict_keys):
+        if element.isalpha():
+            alpha_count_dict[element] = char_dict_values[i]
 
     return alpha_count_dict
 
 
 def character_count(file):
     char_dict = {}
-
     lowered_file = file.lower()
+
     for c in lowered_file:
         if c not in char_dict:
             char_dict[c] = 1
